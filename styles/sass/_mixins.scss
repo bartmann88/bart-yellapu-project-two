@@ -1,0 +1,59 @@
+@mixin heading($font-size, $letter-spacing, $line-height) {
+    font-family: 'Barlow', sans-serif;
+    letter-spacing: $letter-spacing;
+    font-size: $font-size;
+    font-weight: bold;
+    line-height: $line-height;
+    color:$white;
+}
+
+@mixin position($position, $top:null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin nav {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: 1px;
+    color:$white;
+    text-transform: uppercase;
+}
+
+@mixin p {
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    line-height: 38px;
+    color: $white;
+    font-weight: 300;
+}
+
+    @mixin button ($textcolor, $buttoncolor) {
+    font-size: 20px;
+    color: $textcolor;
+    padding: 1% 2%;
+    background-color: $buttoncolor;
+    font-family: 'Barlow', sans-serif;
+    font-weight:bold;
+}
+
+@mixin heading-h3 {
+    font-family: 'barlow', sans-serif;
+    letter-spacing: 1px;
+    font-size: 32px;
+    color: $white;
+}
+
+@mixin interact-heading {
+    font-family: 'barlow', sans-serif;
+    letter-spacing: 1px;
+    font-size: 35px;
+    color: $white;
+}
+
+

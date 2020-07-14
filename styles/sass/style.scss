@@ -1,0 +1,312 @@
+@import "setup";
+
+@import "variable";
+
+@import "header";
+
+@import "mixins";
+
+@import "blog";
+
+// Defaul Styles
+
+// font-family: 'Barlow', sans-serif;
+// font-family: 'Lato', sans-serif;
+
+html {
+  font-size: 125%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: $white;
+}
+
+.button-find-out a:visited {
+  text-decoration: none;
+  color: $dark-blue;
+}
+
+
+// Home Page
+
+.home-header {
+  background-image: url(/assets/header-image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+  background-image: linear-gradient();
+
+//background:linear-gradient(rgba(0,0,0,0.9)), url(/assets/);
+  // >>>>>FIGURE OUT A WAY TO MAKE THE BACKGROUND IMAGE DARKER<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+}
+
+.heading-hero {
+  display: flex;
+  flex-direction: row;
+
+  .heading-title {
+    @include heading(120px, 1, 0.8);
+    width: 50%;
+    height: 50%;
+    padding-left: 15%;
+    padding-top: 10%;
+  }
+
+  img {
+    object-fit: contain;
+    width: 50%;
+    position: absolute;
+    bottom: -1%;
+    right: 0;
+  }
+}
+
+nav {
+  @include heading(20px, 0, 1);
+  text-transform: uppercase;
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 3rem;
+  }
+
+  li {
+    margin: 1.5rem 1.5rem;
+  }
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  background: $dark-blue;
+  padding: 15% 10%;
+  text-align: center;
+
+  h2 {
+    @include heading(32px, 1, 1);
+  }
+
+  p {
+    @include p;
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+
+  .button-find-out a {
+    @include button($dark-blue, $blue-robin);
+    border-radius: 2px;
+  }
+}
+
+.new-additions-container {
+  background-color: $spruce;
+}
+
+.article1 {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+
+  img {
+    box-shadow: 30px 30px 0px 0px $blue-robin;
+    top: 50px;
+    width: 45%;
+    align-self: center;
+    margin-top: -6%;
+  }
+
+  .right-article {
+    text-align: left;
+    padding: 5% 0% 5% 10%;
+
+    h3 {
+      @include heading-h3;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      @include p;
+      padding-top: 3%;
+      padding-bottom: 3%;
+    }
+
+    .button-readmore a {
+      @include button($white, $dark-blue);
+    }
+  }
+}
+
+.article2 {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  justify-content: space-between;
+
+  img {
+    box-shadow: -30px 30px 0px 0px $blue-robin;
+    top: 50px;
+    width: 45%;
+    align-self: center;
+    margin-bottom: -3%;
+  }
+
+  .left-article {
+    text-align: right;
+    padding: 5% 10% 5% 10%;
+
+    h3 {
+      @include heading-h3;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      @include p;
+      padding-top: 3%;
+      padding-bottom: 5%;
+    }
+
+    .button-readmore a {
+      @include button($white, $dark-blue);
+    }
+  }
+}
+
+.interact-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  background-color: $dark-blue;
+  width: 100%;
+  height: 100%;
+
+  .interact-block {
+    width: 80%;
+    height: auto;
+    text-align: left;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  h4 {
+    @include interact-heading;
+  }
+
+  div p {
+    @include p;
+  }
+
+  i,
+  h4 {
+    display: inline-block;
+  }
+
+  i {
+    background-color: yellowgreen;
+    padding: 15px;
+    margin-right: 15px;
+    border-radius: 50%;
+    font-size: 25px;
+  }
+
+}
+
+.interact-container > .interact-block:nth-last-of-type(-n+2) {
+    padding-top: 1rem;
+//   ||||| Found this on stackoverflow ||||
+}
+
+.spotlight{
+    background: $dark-blue;
+    display: flex;
+    justify-content: space-around;
+    padding: 4rem 3rem;
+
+    img{
+        width:25%;
+        height: auto;
+        box-shadow: 35px 35px 0px -5px $blue-robin;
+    }
+
+    .spotlight-content{
+        width: 65%;
+
+    }
+
+    .spotlight-content h2{
+        @include heading(42px, 1px, 1);
+    }
+
+    .spotlight-content p{
+        @include p;
+        margin: 4% 0;
+    }
+
+    .button-find-out a{
+        @include button($dark-blue,$blue-robin);
+    }
+
+}
+
+.gallery{
+    display: flex;
+    padding: 7.5% 0;
+    justify-content: center;
+    background: $spruce;
+    
+    img {
+		width: 25%;
+		margin: 0 15px;
+	}
+}
+
+.banner{
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+
+    .bottom-footer{
+        text-align: center;
+        background: $blue-robin;
+	p {
+		@include p;
+		font-weight: 700;
+		margin: 0;
+		padding: 5px 0;
+		a {
+			color: $dark-blue;
+        }
+
+		a:hover {
+			color:$spruce;
+			
+		}
+	}
+    }
+    
+}
+
+
+@import "contact";
+
